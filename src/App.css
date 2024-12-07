@@ -2,37 +2,60 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.title {
+  text-align: center;
+  background-color: rgb(1, 14, 49);
+  border: 2px solid rgb(205, 198, 255);
+  border-radius: 5px;
+  padding: 20px 20px;
+  margin-top: 50px;
+  height: 100px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.title p:hover {
+  cursor: pointer;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.main-heading {
+  text-align: center;
+  padding: 50px 20px;
+  background: linear-gradient(to right, #101010, #2e126b);
   color: white;
+  transition: font-size 2s ease-in;
 }
 
-.App-link {
-  color: #61dafb;
+.main-heading p {
+  font-size: 28px;
+  transition: font-size 2s ease-in;
+  color: hsl(261, 28%, 90%);
+  transition: color 0.5s ease, scale 0.5s ease-in;
+  animation: glow 1.9s infinite ease-in-out;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+#welcome-text {
+  font-size: 50px;
+  letter-spacing: 5px;
+  transition: letter-spacing 1s ease;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+#welcome-text:hover {
+  letter-spacing: 5px;
+  cursor: none;
+}
+
+.flex-container {
+  margin-bottom: 80px;
+}
+
+@keyframes glow {
+  0% {
+    color: hsl(258, 100%, 98%, 0.5);
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    color: hsl(0, 0%, 100%, 1);
+  }
+  100% {
+    color: hsl(0, 0%, 100%, 0.5);
   }
 }

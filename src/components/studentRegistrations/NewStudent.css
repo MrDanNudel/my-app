@@ -1,0 +1,106 @@
+/* Container styling */
+.new-student-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 2s ease;
+}
+
+.new-student-container:hover {
+  background-color: #ecebee;
+}
+
+/* Form title */
+.form-title {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+/* Form group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+}
+
+.form-group input,
+.form-group select {
+  width: 90%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+  position: relative;
+  left: 20px;
+  margin-top: 20px;
+}
+
+/* Submit button */
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.new-registration {
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+}
+
+.register-student-button {
+  background: linear-gradient(90deg, #4caf50, #2e8b57); /* Gradient effect */
+  color: white; /* Text color */
+  padding: 12px 24px; /* Padding for size */
+  font-size: 40px; /* Text size */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; /* Font style */
+  border: none; /* No border */
+  border-radius: 25px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  transition: background-color 0.6s ease; /* Smooth hover effects */
+  margin-top: 70px;
+  width: 350px;
+  margin-bottom: 60px;
+  animation: grow-shrink 2s infinite ease-in-out;
+}
+
+.register-student-button:hover {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Shadow closer */
+  background: linear-gradient(90deg, #0b760f, #11a950); /* Gradient effect */
+  animation: none;
+  transform: scale(1.1);
+}
+@keyframes grow-shrink {
+  0% {
+    transform: scale(1); /* Normal size */
+  }
+  50% {
+    transform: scale(1.1); /* Grow */
+  }
+  100% {
+    transform: scale(1); /* Shrink back */
+  }
+}

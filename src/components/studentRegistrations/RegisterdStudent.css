@@ -1,0 +1,57 @@
+.registration-table {
+  margin-top: 50px;
+  width: 100%;
+  border-collapse: collapse;
+  background-color: hsla(265, 71%, 12%, 0.9); /* Dark background */
+  color: #f1f1f1; /* Light text color */
+  font-size: 18px;
+  transition: background-color 1s ease-in-out;
+  margin-bottom: 50px;
+}
+
+.registration-table th {
+  padding: 15px;
+  text-align: center;
+  border-bottom: 1px solid #000000; /* Light border for rows */
+}
+
+.registration-table td {
+  padding: 12px;
+  text-align: center;
+  border-bottom: 1px solid #000000; /* Light border for rows */
+}
+
+.registration-table th {
+  background-color: hsla(0, 0%, 0%, 0.5); /* Darker header */
+  font-size: 25px;
+}
+
+.registration-table tr:nth-child(even) {
+  background-color: hsla(
+    265,
+    71%,
+    12%,
+    0.5
+  ); /* Dark background */ /* Slightly lighter row background for better readability */
+}
+
+/* Apply the transition to hover with ease-in effect */
+.registration-table tr:hover td {
+  background-color: hsl(231, 61%, 37%); /* Hover effect for table cells only */
+  cursor: pointer; /* Highlight rows on hover */
+  transition: background-color 0.5s ease-in; /* Smooth 2s easing effect */
+}
+
+.registration-table td {
+  font-size: 22px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/* Ensuring table headers stay the same color on hover */
+.registration-table th:hover {
+  cursor: none; /* Keeps the same color on hover */
+}
+
+.registration-table th {
+  background-color: hsla(282, 83%, 7%, 0.9);
+}

@@ -1,0 +1,70 @@
+.Course_description {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  align-items: center;
+  flex-flow: column;
+  justify-content: center;
+  flex: 1;
+  opacity: 0.7;
+  transition: "opacity 0.2s ease";
+}
+
+/* Applying animation on the h2 */
+
+.title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.flex-container-course-display {
+  display: flex;
+  flex-direction: row; /* Arrange child divs in a row */
+  justify-content: center; /* Add spacing between child divs */
+  align-items: center; /* Align child divs at the top */
+  gap: 25px; /* Add space between divs */
+  margin-top: 25px;
+}
+
+.flex-item-course-display {
+  background-color: #000000; /* Light background for clarity */
+  border: 2px solid rgb(0, 0, 0);
+  flex: 1; /* Ensure equal sizing of items */
+  max-width: 400px; /* Limit maximum width */
+  padding-bottom: 40px;
+
+  background-size: cover; /* Ensures the image covers the entire div */
+  background-position: center; /* Centers the image in the div */
+  background-repeat: no-repeat; /* Prevents the image from repeating */
+  transition: background-color 2s ease-in-out, transform 0.5s ease,
+    background-image 2s ease-in-out, border 1s ease;
+}
+
+.flex-item-course-display:hover {
+  filter: blur(40%); /* Darkens the background image */
+  transform: scale(1.06); /* Slight zoom-in effect */
+
+  .course_date {
+    transform: scale(1.3);
+    color: rgb(255, 255, 255);
+  }
+
+  .Course_description h2 {
+    transform: scale(1.1);
+  }
+  cursor: pointer;
+  transform: scale(1.06); /* Slight zoom-in effect */
+}
+
+.Course_description h2 {
+  color: rgba(255, 241, 241, 0.9);
+  letter-spacing: 9px;
+  font-size: 45px;
+  position: relative;
+  top: 250px;
+  transition: transform 1s ease;
+}
+
+.Course_description:hover {
+  opacity: 1;
+}
