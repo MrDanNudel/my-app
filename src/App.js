@@ -13,6 +13,33 @@ const DUMMY_REGISTERED_STUDENTS = [
   { id: "5", studentName: "michael milman", course: "Cyber" },
 ];
 
+const ALL_COURSES = {
+  fullstack: {
+    id: "1",
+    courseName: "fullstack",
+    courseDate: new Date(2024, 10, 8),
+    img: "/pics/fullStack.webp",
+  },
+  css: {
+    id: "2",
+    courseName: "css",
+    courseDate: new Date(2024, 1, 8),
+    img: "/pics/css.jpg",
+  },
+  qa: {
+    id: "3",
+    courseName: "qa",
+    courseDate: new Date(2024, 1, 10),
+    img: "/pics/it.jpeg",
+  },
+  cyber: {
+    id: "4",
+    courseName: "cyber",
+    courseDate: new Date(2024, 12, 20),
+    img: "/pics/cyber.png",
+  },
+};
+
 const DUMMY_COURSES = [
   {
     id: "1",
@@ -74,7 +101,10 @@ function App() {
         ))}
       </div>
 
-      <NewStudent onRegisterdNewStudent={addStudentHandler} />
+      <NewStudent
+        onRegisterdNewStudent={addStudentHandler}
+        courses={ALL_COURSES}
+      />
       <RegisterdStudent
         registerdStudents={registeredStudents}
         avaliableCourses={DUMMY_COURSES}

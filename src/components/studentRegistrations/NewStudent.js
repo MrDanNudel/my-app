@@ -7,12 +7,21 @@ function NewStudent(props) {
 
   const saveRegisteredStudentDataHandler = (enteredRegisteredStudentData) => {
     console.log(
-      "Entered Registered Student Data:",
-      enteredRegisteredStudentData
+      "Entered Registered Student Data:" +
+        JSON.stringify(enteredRegisteredStudentData)
+    );
+    const registerdStudentData = {
+      ...enteredRegisteredStudentData,
+
+      id: (Math.floor(Math.random() * 10) + 1).toString(),
+    };
+    console.log(
+      "this is the enteredStudentData After Object change : " +
+        JSON.stringify(registerdStudentData)
     );
 
     // No need to wrap the object in an array
-    props.onRegisterdNewStudent(enteredRegisteredStudentData);
+    props.onRegisterdNewStudent(registerdStudentData);
 
     setIsEditing(false);
   };
@@ -37,6 +46,7 @@ function NewStudent(props) {
       )}
       {isEditing && (
         <StudentForm
+          courses={props.courses}
           onSaveRegisteredStudentData={saveRegisteredStudentDataHandler}
           onCancel={stopEditingHandler}
         />

@@ -7,6 +7,16 @@ function StudentForm(props) {
   const [enteredStudentCourse, setEnteredStudentCourse] = useState("");
   const [enteredCourseDate, setEnterCourseDate] = useState("");
 
+  function dateFormating(date) {
+    console.log("The date we got : " + date);
+
+    const year = date.getFullYear(); // Full 4-digit year
+    const month = String(date.getMonth() + 1).padStart(2, "0"); // Correctly handle 1-based months
+    const day = String(date.getDate()).padStart(2, "0"); // Ensures 2 digits for day
+
+    return `${year}-${month}-${day}`;
+  }
+
   const submitHandler = (event) => {
     event.preventDefault();
 
@@ -35,7 +45,10 @@ function StudentForm(props) {
   };
 
   const studentCourseChangeHandler = (event) => {
-    setEnteredStudentCourse(event.target.value);
+    var enteredCourse = event.target.value;
+    console.log("you choose : " + enteredCourse);
+    setEnteredStudentCourse(enteredCourse);
+    setEnterCourseDate(dateFormating(props.courses[enteredCourse].courseDate));
   };
 
   const studentCourseDateChangeHandler = (event) => {
@@ -85,6 +98,7 @@ function StudentForm(props) {
             className="date-display"
             onChange={studentCourseDateChangeHandler}
             value={enteredCourseDate}
+            disabled
           />
         </div>
       </div>
