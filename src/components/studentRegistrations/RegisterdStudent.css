@@ -55,3 +55,17 @@
 .registration-table th {
   background-color: hsla(282, 83%, 7%, 0.9);
 }
+
+.title-all-data {
+  position: relative;
+  padding-left: 835px;
+  opacity: 0.5;
+  letter-spacing: 1px;
+  width: 350px;
+  transition: opacity 1s ease-in;
+}
+
+.title-all-data:hover {
+  opacity: 0.8;
+  cursor: none;
+}

@@ -4,13 +4,14 @@ import Navbar from "./components/studentRegistrations/Navbar";
 import NewStudent from "./components/studentRegistrations/NewStudent";
 import CourseDisplay from "./components/studentRegistrations/CourseDisplay";
 import "./App.css";
+import DisplayData from "./components/studentRegistrations/DisplayData";
 
 const DUMMY_REGISTERED_STUDENTS = [
-  { id: "1", studentName: "itzik norov", course: "CSS" },
+  { id: "1", studentName: "itzik norov", course: "css" },
   { id: "2", studentName: "max passmanik", course: "Fullstack" },
   { id: "3", studentName: "David Sukner", course: "QA" },
-  { id: "4", studentName: "yan shopin", course: "Cyber" },
-  { id: "5", studentName: "michael milman", course: "Cyber" },
+  { id: "4", studentName: "yan shopin", course: "cyber" },
+  { id: "5", studentName: "michael milman", course: "cyber" },
 ];
 
 const ALL_COURSES = {
@@ -105,6 +106,8 @@ function App() {
         onRegisterdNewStudent={addStudentHandler}
         courses={ALL_COURSES}
       />
+      {/* New DisplayData Component */}
+      <DisplayData courses={ALL_COURSES} students={registeredStudents} />
       <RegisterdStudent
         registerdStudents={registeredStudents}
         avaliableCourses={DUMMY_COURSES}
