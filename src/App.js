@@ -88,7 +88,11 @@ function App() {
         <p id="intro-text">Your one-stop for student registration!</p>
       </section>
 
-      <Navbar className="search-by" />
+      <Navbar
+        className="search-by"
+        registeredStudents={registeredStudents}
+        courses={ALL_COURSES}
+      />
 
       <div className="flex-container-course-display">
         {DUMMY_COURSES.map((course, index) => (
