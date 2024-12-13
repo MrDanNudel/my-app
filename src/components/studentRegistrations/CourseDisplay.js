@@ -1,35 +1,50 @@
-import React from "react";
+import React, { useState } from "react";
 import "./CourseDisplay.css";
-import CourseDate from "./CourseDate";
 import CourseDateDisplay from "./CourseDateDisplay";
 
 function CourseDisplay(props) {
-  const { courseName, courseDate, courseImg } = props;
-  console.log("Course Name:", courseName);
-  console.log("Course Date:", courseDate);
-  console.log("Course Image:", courseImg);
+  const { courseName, courseDate, courseImg, courseDescription } = props;
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // Find the course the studnt is signed up for
+  // Toggle the modal visibility
+  const toggleModal = () => {
+    setIsModalOpen((prevState) => !prevState);
+  };
 
   return (
-    <div
-      className="Course_description"
-      style={{
-        backgroundImage: `
-        linear-gradient(
-        rgb(10, 137, 91,0.1), rgb(27, 29, 136,0.1)) ,
-        url(${courseImg})`, // Dynamically set the background image
-        backgroundSize: "cover",
-        backgroundPosition: "center",
-        height: "500px", // Example height
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <h2>{courseName}</h2>
+    <div>
+      {/* Course Card */}
+      <div
+        className="Course_description"
+        style={{
+          backgroundImage: `linear-gradient(rgb(10, 137, 91, 0.1), rgb(27, 29, 136, 0.1)), url(${courseImg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          height: "500px",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+        onClick={toggleModal}
+      >
+        <h2>{courseName}</h2>
+        <CourseDateDisplay courseDate={courseDate}></CourseDateDisplay>
+      </div>
 
-      <CourseDateDisplay courseDate={courseDate}></CourseDateDisplay>
+      {/* Modal for Description */}
+      {isModalOpen && (
+        <div className="modal-backdrop" onClick={toggleModal}>
+          <div className="modal" onClick={(e) => e.stopPropagation()}>
+            <div className="modal-header">
+              <h2>{courseName}</h2>
+              <button onClick={toggleModal} className="close-btn">
+                X
+              </button>
+            </div>
+            <p>{courseDescription}</p>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

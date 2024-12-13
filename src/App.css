@@ -12,6 +12,10 @@
   height: 100px;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .title p:hover {
   cursor: pointer;
 }

@@ -57,11 +57,10 @@
 }
 
 .title-all-data {
-  position: relative;
-  padding-left: 835px;
+  text-align: center; /* Centers the text */
   opacity: 0.5;
   letter-spacing: 1px;
-  width: 350px;
+  width: 100%; /* Ensure it takes up full width */
   transition: opacity 1s ease-in;
 }
 
